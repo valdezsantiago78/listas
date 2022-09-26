@@ -8,38 +8,63 @@ lista * Crear()
 
 lista * InsertarElemento(lista * l, int dato)
 {
-    lista * primero;
+    
     lista * aux = new(lista);
-    aux->dato = dato;
-
+    
     if(l==NULL)
     {
-        l = aux;
+        aux->dato = dato;
         aux->siguiente = NULL;
-        return l;
+        l = aux;
     }
     else if(l->siguiente==NULL)
     {
+        aux->dato = dato;
+        aux->siguiente = NULL;
         l->siguiente = aux;
-        aux->siguiente == NULL;
-        return l;
     }
     else
     {
-        primero = l;
-
+        lista * primero = l;
         while(l->siguiente!=NULL)
-        {
-            l = l->siguiente;
+        {   
+            if(l->siguiente==NULL)
+            {
+                aux->dato = dato;
+                aux->siguiente = NULL;
+                l->siguiente = aux;
+            }
+            else
+            {
+                l = l->siguiente;
+            }
         }
-        l->siguiente = aux;
-        aux->siguiente == NULL;
 
         return primero;
     }
+
+    return l;
+
 };
 
-int Head(lista * l)
+lista * Head(lista * l)
 {
-    return l->dato;
+    return l;
+}
+
+bool IsEmpty(lista * l)
+{
+    if(l == NULL)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
+lista * Tail(lista * l)
+{
+    return l->siguiente;
 }

@@ -7,7 +7,13 @@ struct lista{
 };
 
 lista * Crear();
+
 lista * InsertarElemento(lista * l, int dato);
-int Head(lista * l);
+
+lista * Head(lista * l);
+
+bool IsEmpty(lista * l);
+
+lista * Tail(lista * l);
 
 #endif

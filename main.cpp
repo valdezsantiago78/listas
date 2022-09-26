@@ -6,10 +6,12 @@ using namespace std;
 void Menu()
 {
     bool salir = true;
+    bool creado = false;
+
     while(salir)
     {
         int opcion;
-        lista * l = new(lista);
+        lista * l;
         cout << "---------------------------------------------------------------------" << endl;
         cout << "---------------------------------------------------------------------" << endl;
         cout << ">>> INGRESE UNA OPCION <<<" << endl; 
@@ -23,8 +25,16 @@ void Menu()
         cin >> opcion;
         if(opcion == 1)
         {
-            l = Crear();
-            cout << "Lista creada" << endl;
+            if(creado == true)
+            {
+                cout << "La lista ya se fue creada." << endl;
+            }
+            else
+            {
+                l = Crear();
+                creado = true;
+                cout << "Lista creada!." << endl;
+            }
         }
         else if(opcion==2)
         {
@@ -32,13 +42,56 @@ void Menu()
             cout << "Ingrese un numero : ";
             cin >> numero;
 
-            // InsertarElemento(l, numero);
+            l = InsertarElemento(l, numero);
+
+            cout << "Primer dato ingresado => " << l->dato << endl;
+        
+        }
+        else if(opcion==3)
+        {
+            if(IsEmpty(l))
+            {
+                cout << "La lista esta vacia."<< endl;
+            }
+            else
+            {
+                cout << "La lista tiene datos."<< endl;
+            }
         }
         else if(opcion==4)
         {
-            if(l!=NULL)
+            if(creado == true)
             {
-                cout << Head(l);
+                cout << "Primer dato de la lista => ";
+                cout << Head(l) << endl;
+            }
+            else
+            {
+                std::cout << "Crea la lista primero." << std::endl;
+            }
+        }
+        else if(opcion==5)
+        {
+            if(creado == true)
+            {
+                cout << "Tail de la lista => ";
+                
+                while(Head(l)!=NULL)
+                {
+                    if(IsEmpty(Tail(l)))
+                    {
+                        cout << "Fin de la lista" << endl;
+                    }else
+                    {
+                        std::cout << " Dato -> " << l->dato << std::endl;
+                        l = l->siguiente;
+                    }
+                } 
+
+            }
+            else
+            {
+                std::cout << "Crea la lista primero." << std::endl;
             }
         }
         else if(opcion==0)
