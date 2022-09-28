@@ -10,7 +10,7 @@ lista * Crear();
 
 lista * InsertarElemento(lista * l, int dato);
 
-lista * Head(lista * l);
+int Head(lista * l);
 
 bool IsEmpty(lista * l);
 

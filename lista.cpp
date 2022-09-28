@@ -10,46 +10,36 @@ lista * InsertarElemento(lista * l, int dato)
 {
     
     lista * aux = new(lista);
+    aux->dato = dato;
     
     if(l==NULL)
     {
-        aux->dato = dato;
         aux->siguiente = NULL;
         l = aux;
-    }
-    else if(l->siguiente==NULL)
-    {
-        aux->dato = dato;
-        aux->siguiente = NULL;
-        l->siguiente = aux;
+
+        return l;
     }
     else
     {
         lista * primero = l;
-        while(l->siguiente!=NULL)
+        lista * actual = l;
+
+        while(actual->siguiente!=NULL)
         {   
-            if(l->siguiente==NULL)
-            {
-                aux->dato = dato;
-                aux->siguiente = NULL;
-                l->siguiente = aux;
-            }
-            else
-            {
-                l = l->siguiente;
-            }
+            actual = actual->siguiente;
         }
 
+        actual->siguiente = aux;
+        aux->siguiente = NULL;
+        
         return primero;
     }
 
-    return l;
-
 };
 
-lista * Head(lista * l)
+int Head(lista * l)
 {
-    return l;
+    return l->dato;
 }
 
 bool IsEmpty(lista * l)

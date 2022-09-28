@@ -44,7 +44,7 @@ void Menu()
 
             l = InsertarElemento(l, numero);
 
-            cout << "Primer dato ingresado => " << l->dato << endl;
+            cout << "Dato ingresado => " << l->dato << endl;
         
         }
         else if(opcion==3)
@@ -63,6 +63,7 @@ void Menu()
             if(creado == true)
             {
                 cout << "Primer dato de la lista => ";
+                
                 cout << Head(l) << endl;
             }
             else
@@ -74,20 +75,13 @@ void Menu()
         {
             if(creado == true)
             {
-                cout << "Tail de la lista => ";
-                
-                while(Head(l)!=NULL)
-                {
-                    if(IsEmpty(Tail(l)))
-                    {
-                        cout << "Fin de la lista" << endl;
-                    }else
-                    {
-                        std::cout << " Dato -> " << l->dato << std::endl;
-                        l = l->siguiente;
-                    }
-                } 
-
+               cout << "Cola de la lista sin el primer elemento => " << endl; 
+               
+               while(Tail(l)!=NULL)
+               {
+                l = Tail(l);
+                cout << "Dato->" << Head(l) << endl;
+               }
             }
             else
             {
