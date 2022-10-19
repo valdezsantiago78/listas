@@ -9,4 +9,4 @@ helper.o:
 matriz.o:
 	g++ -Wall -c matriz.cpp matriz.h
 clean:
-	rm -rf *.o
+	rm -f *.o
