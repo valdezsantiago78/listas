@@ -171,8 +171,8 @@ void Menu()
                 cout << "Ingrese las columnas, entre (x,x,x) > " << endl;
                 cin >> columnas;
                 
-                cout << "Ahora los valores, entre (x,x,x) > " << endl;
-                cin >> valores;
+                // cout << "Ahora los valores, entre (x,x,x) > " << endl;
+                // cin >> valores;
 
                 // t = crearTabla(nomb);
 
