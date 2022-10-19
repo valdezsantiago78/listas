@@ -16,4 +16,10 @@ bool IsEmpty(lista * l);
 
 lista * Tail(lista * l);
 
+bool IsElement(int x, lista * l);
+// Retorna true si x pertenece a l, false en caso contrario.
+
+bool EsPar_rec(lista * l);
+//Realiza una funcion recusiva para saber si es par o no.
+
 #endif

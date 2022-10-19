@@ -1,5 +1,6 @@
 #include "lista.h"
 #include <iostream>
+#include "helper.h"
 
 lista * Crear()
 {
@@ -58,3 +59,38 @@ lista * Tail(lista * l)
 {
     return l->siguiente;
 }
+
+bool IsElement(int x, lista * l)
+{
+    lista * actual = l;
+    
+    while(actual->siguiente!=NULL && actual->dato != x)
+    {
+            actual = actual->siguiente;        
+    }
+
+    if(actual->dato == x)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+};
+
+bool EsPar_rec(lista * l)
+{
+    if(l==NULL)
+    {
+        return true;
+    }
+    else if(EsPar_rec(l->siguiente))
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+};
